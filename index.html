@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><img srcCampus Connect - Connect, Collaborate, Share</title>
+    <title>Campus Connect - Home</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@
                 <span>Campus Connect</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#posts" class="nav-link">Posts</a>
-                <a href="#profile" class="nav-link">Profile</a>
-                <a href="#about" class="nav-link">About</a>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="posts.html" class="nav-link">Posts</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="about.html" class="nav-link">About</a>
             </div>
             <div class="nav-auth">
                 <button class="btn btn-outline" id="login-btn">Login</button>
@@ -37,7 +37,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Home Section -->
-        <section id="home" class="section active">
+        <section id="home" class="section">
             <div class="hero">
                 <div class="hero-content">
                     <h1 class="hero-title">Connect, Collaborate, Share</h1>
@@ -77,7 +77,7 @@
                             <h3>Join Campus Connect</h3>
                             <p>Create your profile and start connecting with fellow students</p>
                         </div>
-                        <div class="action-card" onclick="campusConnect.scrollToSection('posts')">
+                        <div class="action-card" onclick="window.location.href='posts.html'">
                             <div class="action-icon">
                                 <i class="fas fa-search"></i>
                             </div>
@@ -90,147 +90,6 @@
                             </div>
                             <h3>Create a Post</h3>
                             <p>Share your ideas, find teammates, or offer resources</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Posts Section -->
-        <section id="posts" class="section">
-            <div class="container">
-                <div class="posts-header">
-                    <h2 class="section-title">Latest Posts</h2>
-                    <div class="posts-controls">
-                        <div class="search-box">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="search-input" placeholder="Search posts...">
-                        </div>
-                        <select id="category-filter" class="filter-select">
-                            <option value="">All Categories</option>
-                            <option value="project">Project Ideas</option>
-                            <option value="study">Study Groups</option>
-                            <option value="resource">Resources</option>
-                            <option value="event">Events</option>
-                        </select>
-                        <button class="btn btn-primary" id="create-post-btn">
-                            <i class="fas fa-plus"></i>
-                            Create Post
-                        </button>
-                    </div>
-                </div>
-                <div class="posts-grid" id="posts-grid">
-                    <!-- Posts will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Profile Section -->
-        <section id="profile" class="section">
-            <div class="container">
-                <div class="profile-container">
-                    <div class="profile-header">
-                        <div class="profile-avatar">
-                            <img src="https://via.placeholder.com/120x120/4F46E5/FFFFFF?text=JD" alt="Profile" id="profile-img">
-                            <button class="edit-avatar-btn">
-                                <i class="fas fa-camera"></i>
-                            </button>
-                        </div>
-                        <div class="profile-info">
-                            <h2 id="profile-name">John Doe</h2>
-                            <p id="profile-email">john.doe@university.edu</p>
-                            <p id="profile-major">Computer Science</p>
-                            <div class="profile-stats">
-                                <div class="stat">
-                                    <span class="stat-number">12</span>
-                                    <span class="stat-label">Posts</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">45</span>
-                                    <span class="stat-label">Connections</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">8</span>
-                                    <span class="stat-label">Projects</span>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline" id="edit-profile-btn">
-                            <i class="fas fa-edit"></i>
-                            Edit Profile
-                        </button>
-                    </div>
-
-                    <div class="profile-content">
-                        <div class="profile-section">
-                            <h3>Skills</h3>
-                            <div class="skills-container" id="skills-container">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Machine Learning</span>
-                            </div>
-                        </div>
-
-                        <div class="profile-section">
-                            <h3>Interests</h3>
-                            <div class="interests-container" id="interests-container">
-                                <span class="interest-tag">Web Development</span>
-                                <span class="interest-tag">AI/ML</span>
-                                <span class="interest-tag">Mobile Apps</span>
-                                <span class="interest-tag">Data Science</span>
-                            </div>
-                        </div>
-
-                        <div class="profile-section">
-                            <h3>My Posts</h3>
-                            <div class="user-posts" id="user-posts">
-                                <!-- User's posts will be loaded here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-content">
-                    <h2 class="section-title">About Campus Connect</h2>
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <p>Campus Connect is designed to bridge the gap between students and opportunities. We understand the challenges of finding the right teammates, study groups, and resources in a large campus environment.</p>
-                            <p>Our platform provides a centralized space where students can showcase their skills, share resources, and connect with like-minded peers for meaningful collaborations.</p>
-                            <div class="about-features">
-                                <div class="about-feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Easy to use interface</span>
-                                </div>
-                                <div class="about-feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Secure and private</span>
-                                </div>
-                                <div class="about-feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Mobile responsive</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="about-stats">
-                            <div class="stat-card">
-                                <h3>500+</h3>
-                                <p>Active Students</p>
-                            </div>
-                            <div class="stat-card">
-                                <h3>1000+</h3>
-                                <p>Posts Created</p>
-                            </div>
-                            <div class="stat-card">
-                                <h3>200+</h3>
-                                <p>Successful Collaborations</p>
-                            </div>
                         </div>
                     </div>
                 </div>
