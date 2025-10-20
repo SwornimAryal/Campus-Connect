@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect - Posts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Campus Connect</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="posts.html" class="nav-link active">Posts</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn-outline" id="login-btn">Login</button>
+                <button class="btn btn-primary" id="register-btn">Sign Up</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Posts Section -->
+        <section id="posts" class="section">
+            <div class="container">
+                <div class="posts-header">
+                    <h2 class="section-title">Latest Posts</h2>
+                    <div class="posts-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-input" placeholder="Search posts...">
+                        </div>
+                        <select id="category-filter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="project">Project Ideas</option>
+                            <option value="study">Study Groups</option>
+                            <option value="resource">Resources</option>
+                            <option value="event">Events</option>
+                        </select>
+                        <button class="btn btn-primary" id="create-post-btn">
+                            <i class="fas fa-plus"></i>
+                            Create Post
+                        </button>
+                    </div>
+                </div>
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Posts will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button class="modal-close" id="login-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" id="show-register">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button class="modal-close" id="register-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-major">Major</label>
+                    <input type="text" id="register-major" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <input type="password" id="register-confirm" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                <p class="auth-switch">
+                    Already have an account? <a href="#" id="show-login">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Post Modal -->
+    <div class="modal" id="create-post-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Post</h2>
+                <button class="modal-close" id="create-post-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="post-form" id="create-post-form">
+                <div class="form-group">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-category">Category</label>
+                    <select id="post-category" required>
+                        <option value="">Select Category</option>
+                        <option value="project">Project Ideas</option>
+                        <option value="study">Study Groups</option>
+                        <option value="resource">Resources</option>
+                        <option value="event">Events</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Description</label>
+                    <textarea id="post-content" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-tags">Tags (comma separated)</label>
+                    <input type="text" id="post-tags" placeholder="e.g., JavaScript, React, Web Development">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancel-post">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="edit-profile-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="modal-close" id="edit-profile-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="profile-form" id="edit-profile-form">
+                <div class="form-group">
+                    <label for="edit-name">Full Name</label>
+                    <input type="text" id="edit-name" value="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-major">Major</label>
+                    <input type="text" id="edit-major" value="Computer Science" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-bio">Bio</label>
+                    <textarea id="edit-bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-skills">Skills (comma separated)</label>
+                    <input type="text" id="edit-skills" value="JavaScript, React, Node.js, Python, Machine Learning">
+                </div>
+                <div class="form-group">
+                    <label for="edit-interests">Interests (comma separated)</label>
+                    <input type="text" id="edit-interests" value="Web Development, AI/ML, Mobile Apps, Data Science">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancel-edit">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
