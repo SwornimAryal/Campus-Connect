@@ -450,6 +450,18 @@ class CampusConnect {
             { id: 2, title: "Study Group for Machine Learning Course", category: "study", content: "Forming a study group for CS 229 Machine Learning. We meet twice a week to discuss assignments and prepare for exams. All skill levels welcome!", tags: ["Machine Learning", "Study Group", "CS 229"], author: "Mike Chen", authorInitials: "MC", date: "2024-01-14", likes: 8, comments: 3 },
             { id: 3, title: "Free Python Tutorial Resources", category: "resource", content: "Sharing a collection of free Python tutorials and coding challenges. Perfect for beginners and intermediate learners.", tags: ["Python", "Tutorial", "Programming"], author: "Alex Rodriguez", authorInitials: "AR", date: "2024-01-13", likes: 15, comments: 7 },
             { id: 4, title: "Tech Talk: Future of AI in Healthcare", category: "event", content: "Join us for an exciting tech talk by Dr. Emily Watson on AI applications in healthcare. Free pizza and networking after the talk!", tags: ["AI", "Healthcare", "Tech Talk"], author: "Tech Society", authorInitials: "TS", date: "2024-01-12", likes: 20, comments: 12 }
+            { 
+                id: 6, 
+                title: "Database Design Study Materials", 
+                category: "resource", 
+                content: "Comprehensive notes and practice problems for Database Systems course. Covers SQL, normalization, indexing, and query optimization.", 
+                tags: ["Database", "SQL", "Study Materials", "CS 145"], 
+                author: "Lisa Wang", 
+                authorInitials: "LW", 
+                date: "2024-01-10", 
+                likes: 9, 
+                comments: 2 
+            }
         ];
     }
 }
